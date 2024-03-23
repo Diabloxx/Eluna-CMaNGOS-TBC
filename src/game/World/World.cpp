@@ -22,7 +22,7 @@
 
 #include "World/World.h"
 #include "Database/DatabaseEnv.h"
-#include "Language.h"
+#include "Tools/Language.h"
 #include "Config/Config.h"
 #include "Platform/Define.h"
 #include "SystemConfig.h"
