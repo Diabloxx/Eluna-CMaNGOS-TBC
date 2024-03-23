@@ -40,7 +40,7 @@ AuctionHouseBot::~AuctionHouseBot()
 
 void AuctionHouseBot::Initialize()
 {
-    if (!m_ahBotCfg.SetSource(m_configFileName, "Mangosd_"))
+    if (!m_ahBotCfg.SetSource(m_configFileName))
     {
         // set buy/sell chance to 0, this prevents Update() from accessing uninitialized variables
         m_chanceBuy = 0;
