@@ -1019,7 +1019,7 @@ int32 Pet::GetDispTP() const
 
 void Pet::Unsummon(PetSaveMode mode, Unit* owner /*= nullptr*/)
 {
-    MANGOS_ASSERT(!m_removed);
+    if (m_removed) return;
 
     if (!owner)
         owner = GetOwner();
