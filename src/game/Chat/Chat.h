@@ -311,6 +311,12 @@ class ChatHandler
         bool HandleDebugSendSpellFailCommand(char* args);
         bool HandleDebugSendWorldState(char* args);
 
+        bool HandleReloadAutoBroadcastCommand(char* args);
+        bool HandleXPCommandSet(char* args);
+        bool HandleXPCommandCurrent(char* args);
+        bool HandleXPCommandAvailable(char* args);
+        bool HandleXPCommandDisable(char* args);
+        bool HandleXPCommandEnable(char* args);
         bool HandleDebugFlyCommand(char* args);
 
         bool HandleDebugOutPacketHistory(char* args);

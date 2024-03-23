@@ -359,6 +359,15 @@ bool ChatHandler::HandleReloadCommandCommand(char* /*args*/)
     return true;
 }
 
+    // Handle Reload for Autobroadcast.
+bool ChatHandler::HandleReloadAutoBroadcastCommand(char* /*args*/)
+{
+    sLog.outString("Re-Loading broadcast strings...");
+    sWorld.LoadBroadcastStrings();
+    SendGlobalSysMessage("Broadcast strings reloaded.");
+    return true;
+}
+
 bool ChatHandler::HandleReloadCreatureQuestRelationsCommand(char* /*args*/)
 {
     sLog.outString("Loading Quests Relations... (`creature_questrelation`)");
