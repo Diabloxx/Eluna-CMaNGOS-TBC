@@ -511,6 +511,7 @@ Player::Player(WorldSession* session): Unit(), m_taxiTracker(*this), m_mover(thi
         SetAcceptWhispers(true);
 
     m_usedTalentCount = 0;
+    EnableXPGain();                                         // Defaults to enabling XP when login
 
     m_zoneUpdateId = 0;
     m_zoneUpdateTimer = 0;
@@ -2879,7 +2880,6 @@ void Player::GiveLevel(uint32 level)
 
     InitTalentForLevel();
     InitTaxiNodesForLevel();
-    EnableXPGain();                                         // Defaults to enabling XP when login
 
     UpdateAllStats();
 
