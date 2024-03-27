@@ -1069,7 +1069,6 @@ void Map::Update(const uint32& t_diff)
         if (!player || !player->IsInWorld() || !player->IsPositionValid())
             continue;
 
-#ifdef ENABLE_PLAYERBOTS
         // For non-players only load the grid
         if (!player->isRealPlayer())
         {
@@ -1089,7 +1088,6 @@ void Map::Update(const uint32& t_diff)
 
             continue;
         }
-#endif
 
         VisitNearbyCellsOf(player, grid_object_update, world_object_update);
 
