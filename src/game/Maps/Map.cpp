@@ -51,7 +51,6 @@
 
 #ifdef ENABLE_PLAYERBOTS
 #include "playerbot/playerbot.h"
-#include "PlayerBot/playerbotai.h"
 #endif
 
 #include <time.h>
@@ -59,11 +58,6 @@
 Map::~Map()
 {
 #ifdef BUILD_ELUNA
-
-#ifdef ENABLE_PLAYERBOTS
-    if (HasRealPlayers())
-#endif
-
     if (Eluna* e = GetEluna())
         e->OnDestroy(this);
 
@@ -196,10 +190,6 @@ Map::Map(uint32 id, time_t expiry, uint32 InstanceId, uint8 SpawnMode)
 #ifdef BUILD_ELUNA
     // lua state begins uninitialized
     eluna = nullptr;
-
-#ifdef ENABLE_PLAYERBOTS
-    if (HasRealPlayers())
-#endif
 
     if (sElunaConfig->IsElunaEnabled() && !sElunaConfig->IsElunaCompatibilityMode() && sElunaLoader->ShouldMapLoadEluna(id))
         eluna = new Eluna(this);
@@ -483,9 +473,6 @@ bool Map::Add(Player* player)
 
 #ifdef BUILD_ELUNA
     if (Eluna* e = GetEluna())
-#ifdef ENABLE_PLAYERBOTS
-    if (HasRealPlayers())
-#endif
     {
         e->OnMapChanged(player);
         e->OnPlayerEnter(this, player);
@@ -1082,6 +1069,7 @@ void Map::Update(const uint32& t_diff)
         if (!player || !player->IsInWorld() || !player->IsPositionValid())
             continue;
 
+#ifdef ENABLE_PLAYERBOTS
         // For non-players only load the grid
         if (!player->isRealPlayer())
         {
@@ -1101,6 +1089,7 @@ void Map::Update(const uint32& t_diff)
 
             continue;
         }
+#endif
 
         VisitNearbyCellsOf(player, grid_object_update, world_object_update);
 
@@ -1226,9 +1215,6 @@ void Map::Update(const uint32& t_diff)
 void Map::Remove(Player* player, bool remove)
 {
 #ifdef BUILD_ELUNA
-#ifdef ENABLE_PLAYERBOTS
-    if (HasRealPlayers())
-#endif
     if (Eluna* e = GetEluna())
         e->OnPlayerLeave(this, player);
 #endif
@@ -1755,9 +1741,6 @@ void Map::AddObjectToRemoveList(WorldObject* obj)
 
 #ifdef BUILD_ELUNA
     if (Eluna* e = GetEluna())
-#ifdef ENABLE_PLAYERBOTS
-        if (HasRealPlayers())
-#endif
     {
         if (Creature* creature = obj->ToCreature())
             e->OnRemove(creature);
@@ -1966,9 +1949,6 @@ void Map::CreateInstanceData(bool load)
 
 #ifdef BUILD_ELUNA
     if (Eluna* e = GetEluna())
-#ifdef BUILD_PLAYERBOTS
-    if (HasRealPlayers())
-#endif
     {
         i_data = e->GetInstanceData(this);
 
@@ -1993,11 +1973,7 @@ void Map::CreateInstanceData(bool load)
                 return;
         }
     }
-
 #else
-    if (i_data != nullptr)
-        return;
-
     if (Instanceable())
     {
         if (InstanceTemplate const* mInstance = ObjectMgr::GetInstanceTemplate(GetId()))
