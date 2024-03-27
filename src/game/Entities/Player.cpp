@@ -2919,6 +2919,9 @@ void Player::GiveLevel(uint32 level)
         SendXPRateToPlayer();
     }
 #ifdef BUILD_ELUNA
+#ifdef ENABLE_PLAYERBOTS
+    if(isRealPlayer())
+#endif
     if (Eluna* e = GetEluna())
         e->OnLevelChanged(this, oldLevel);
 #endif
@@ -21870,6 +21873,9 @@ void Player::LearnTalent(uint32 talentId, uint32 talentRank)
     DETAIL_LOG("TalentID: %u Rank: %u Spell: %u\n", talentId, talentRank, spellid);
 
 #ifdef BUILD_ELUNA
+#ifdef ENABLE_PLAYERBOTS
+    if (isRealPlayer())
+#endif
     if (Eluna* e = GetEluna())
         e->OnLearnTalents(this, talentId, talentRank, spellid);
 #endif
