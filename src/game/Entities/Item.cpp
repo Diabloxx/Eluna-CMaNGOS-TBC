@@ -489,15 +489,6 @@ bool Item::LoadFromDB(uint32 guidLow, Field* fields, ObjectGuid ownerGuid)
 
     uint32 durability = fields[9].GetUInt16();
     SetUInt32Value(ITEM_FIELD_DURABILITY, durability);
-    // update max durability (and durability) if need
-    SetUInt32Value(ITEM_FIELD_MAXDURABILITY, proto->MaxDurability);
-
-    // do not overwrite durability for wrapped items
-    if (durability > proto->MaxDurability && !HasFlag(ITEM_FIELD_FLAGS, ITEM_DYNFLAG_WRAPPED))
-    {
-        SetUInt32Value(ITEM_FIELD_DURABILITY, proto->MaxDurability);
-        need_save = true;
-    }
 
     SetUInt32Value(ITEM_FIELD_ITEM_TEXT_ID, fields[10].GetUInt32());
 
