@@ -1045,12 +1045,10 @@ void Map::Update(const uint32& t_diff)
             {
                 activePlayers++;
             }
-#endif
-            plr->Update(t_diff);
 
-#ifdef ENABLE_PLAYERBOTS
             plr->UpdateAI(t_diff, !shouldUpdateBot);
 #endif
+            plr->Update(t_diff);
         }
     }
 
