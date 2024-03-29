@@ -5186,7 +5186,6 @@ SpellCastResult Spell::CheckCast(bool strict)
             if (m_spellInfo->MaxTargetLevel && target->GetLevel() > m_spellInfo->MaxTargetLevel)
                 return SPELL_FAILED_HIGHLEVEL;
 
-#ifdef ENABLE_PLAYERBOTS
             if (target->IsPlayer())
             {
                 PlayerbotAI* bot = ((Player*)target)->GetPlayerbotAI();
@@ -5195,7 +5194,6 @@ SpellCastResult Spell::CheckCast(bool strict)
                     return SPELL_FAILED_IMMUNE;
                 }
             }
-#endif
 
             if (m_spellInfo->HasAttribute(SPELL_ATTR_EX5_NOT_ON_TRIVIAL) && target->IsTrivialForTarget(m_caster))
                 return SPELL_FAILED_TARGET_IS_TRIVIAL;
