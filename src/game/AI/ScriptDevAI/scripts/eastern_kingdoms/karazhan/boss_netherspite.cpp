@@ -30,9 +30,9 @@ enum
 {
     // netherspite spells
     SPELL_NETHERBURN            = 30522,
-    SPELL_VOID_ZONE             = 37063,                // NOTE: all void zone spells have Consumption spell associated with them
+    SPELL_VOID_ZONE             = 0,                // NOTE: all void zone spells have Consumption spell associated with them
     SPELL_NETHERBREATH          = 38523,
-    SPELL_EMPOWERMENT           = 38549,
+    SPELL_EMPOWERMENT           = 0,
     SPELL_NETHER_INFUSION       = 38688,                // hard enrage spell
     SPELL_NETHERSPITE_ROAR      = 38684,                // on banish phase begin
     SPELL_SHADOWFORM            = 38542,                // banish visual spell
@@ -47,17 +47,17 @@ enum
 
     // ***** Netherspite portals spells ***** //
     // beam buffs
-    SPELL_SERENITY_NS           = 30467,
-    SPELL_SERENITY_PLR          = 30422,
-    SPELL_DOMINANCE_NS          = 30468,
-    SPELL_DOMINANCE_PLR         = 30423,
-    SPELL_PERSEVERENCE_NS       = 30466,
-    SPELL_PERSEVERENCE_PLR      = 30421,
+    SPELL_SERENITY_NS           = 0,
+    SPELL_SERENITY_PLR          = 0,
+    SPELL_DOMINANCE_NS          = 0,
+    SPELL_DOMINANCE_PLR         = 0,
+    SPELL_PERSEVERENCE_NS       = 0,
+    SPELL_PERSEVERENCE_PLR      = 0,
 
     // beam debuffs (player with this aura cannot gain the same color buff)
-    SPELL_EXHAUSTION_PER        = 38637,
-    SPELL_EXHAUSTION_SER        = 38638,
-    SPELL_EXHAUSTION_DOM        = 38639,
+    SPELL_EXHAUSTION_PER        = 0,
+    SPELL_EXHAUSTION_SER        = 0,
+    SPELL_EXHAUSTION_DOM        = 0,
 
     // spells which hit players (used only for visual - as seen from spell description)
     SPELL_BEAM_PER              = 30400,
@@ -75,9 +75,9 @@ enum
     SPELL_RED_PORTAL            = 30487,
 
     // passive auras
-    SPELL_PERSEVERANCE_PASSIVE  = 30396,
-    SPELL_SERENITY_PASSIVE      = 30397,
-    SPELL_DOMINANCE_PASSIVE     = 30398,
+    SPELL_PERSEVERANCE_PASSIVE  = 0,
+    SPELL_SERENITY_PASSIVE      = 0,
+    SPELL_DOMINANCE_PASSIVE     = 0,
     // SPELL_CLEAR_NETHER_BEAM  = 37072,                // not clear how to use this
 
     // emotes
@@ -88,7 +88,7 @@ enum
     NPC_PORTAL_GREEN            = 17367,
     NPC_PORTAL_BLUE             = 17368,
     NPC_PORTAL_RED              = 17369,
-    NPC_VOID_ZONE               = 16697,
+    NPC_VOID_ZONE               = 0,
 
     MAX_PORTALS                 = 3,
 };
