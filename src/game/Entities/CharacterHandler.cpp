@@ -129,6 +129,10 @@ void PlayerbotHolder::HandlePlayerBotLoginCallback(QueryResult* dummy, SqlQueryH
     if (sObjectMgr.GetPlayer(lqh->GetGuid()))
         return;
 
+    //if player is not logged in
+    if (masterSession && !masterSession->GetPlayer())
+        return;
+
     uint32 guid = lqh->GetGuid().GetRawValue();
 
     botSession->HandlePlayerLogin(lqh); // will delete lqh
