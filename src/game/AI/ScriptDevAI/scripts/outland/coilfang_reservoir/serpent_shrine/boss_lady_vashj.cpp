@@ -52,9 +52,9 @@ enum
     SPELL_FORKED_LIGHTNING      = 38145,
     SPELL_SHOOT                 = 38295,
 
-    SPELL_MAGIC_BARRIER         = 38112,
-    SPELL_SURGE                 = 38044,                    // Used when elemental comes near Vashj - permanent stacking buff
-    SPELL_SUMMON_TAINTED_ELEM   = 38139,                    // maybe also related to spell 38494
+    SPELL_MAGIC_BARRIER         = 0,
+    SPELL_SURGE                 = 0,                    // Used when elemental comes near Vashj - permanent stacking buff
+    SPELL_SUMMON_TAINTED_ELEM   = 0,                    // maybe also related to spell 38494
 
     // prenerf
     SPELL_PERSUASION            = 38511,                    // tooltip wont work properly due to removed twin spell
@@ -62,7 +62,7 @@ enum
 
     // summons
     NPC_ENCHANTED_ELEMENTAL     = 21958,
-    NPC_TAINTED_ELEMENTAL       = 22009,
+    NPC_TAINTED_ELEMENTAL       = 0,
     NPC_COILFANG_STRIDER        = 22056,
     NPC_COILFANG_ELITE          = 22055,
     NPC_TOXIC_SPOREBAT          = 22140,
@@ -71,9 +71,9 @@ enum
     NPC_OLD_WORLD_TRIGGER       = 15384,
 
     // wave spells
-    SPELL_WAVE_A                = 38019,                    // summons Enchanted Elemental
+    SPELL_WAVE_A                = 0,                    // summons Enchanted Elemental
     SPELL_WAVE_C                = 38242,                    // summons Coilfang Strider
-    SPELL_WAVE_D                = 38244,                    // summons Tainted Elemental
+    SPELL_WAVE_D                = 0,                    // summons Tainted Elemental
     SPELL_WAVE_B                = 38247,                    // summons Coilfang Elite
     SPELL_WAVE_E_1              = 38489,                    // summons Toxic Spore Bat
     SPELL_WAVE_E_2              = 38490,                    // summons Toxic Spore Bat - missing data for this one
@@ -104,11 +104,11 @@ enum
     WAYPOINT_MOVE_FINAL_POINT_SPOREBAT = 8,
 
     // tainted core mechanic
-    ITEM_TAINTED_CORE           = 31088,
+    ITEM_TAINTED_CORE           = 0,
 
     SPELL_PARALYZE              = 38132,                    // aura which should apply to the player which picked the tainted core
     SPELL_THROW_KEY             = 38134,                    // Uses up tainted core and gives it to another player
-    SPELL_REMOVE_TAINTED_CORES  = 39495,
+    SPELL_REMOVE_TAINTED_CORES  = 0,
 
     SPELL_VISUAL_KIT            = 6445,
 

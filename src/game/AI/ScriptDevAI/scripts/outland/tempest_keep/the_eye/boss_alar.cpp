@@ -39,13 +39,13 @@ enum
     // spells
     // phase 1
     SPELL_FLAME_BUFFET      = 34121,        // if nobody is in range
-    SPELL_FLAME_QUILLS      = 34229,
+    SPELL_FLAME_QUILLS      = 0,
     SPELL_EMBER_BLAST       = 34341,        // usee when the boss dies first time
     SPELL_REBIRTH           = 34342,
-    SPELL_CLEAR_ALL_DEBUFFS = 34098,        // used right before ember blast
+    SPELL_CLEAR_ALL_DEBUFFS = 0,        // used right before ember blast
     SPELL_FLIGHT_MODE       = 31514,        // used right after ember blast
-    SPELL_SUMMON_PHOENIX_ADDS_PRENERF = 18814, // pre 2.1
-    SPELL_SUMMON_PHOENIX_ADDS = 41824,      // P1 spell - post 2.1
+    SPELL_SUMMON_PHOENIX_ADDS_PRENERF = 0, // pre 2.1
+    SPELL_SUMMON_PHOENIX_ADDS = 0,      // P1 spell - post 2.1
 
     // phase 2
     SPELL_MELT_ARMOR        = 35410,
