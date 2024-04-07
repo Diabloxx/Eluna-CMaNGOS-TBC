@@ -38,32 +38,32 @@ enum
 {
     // spells
     // phase 1
-    SPELL_FLAME_BUFFET      = 34121,        // if nobody is in range
-    SPELL_FLAME_QUILLS      = 0,
-    SPELL_EMBER_BLAST       = 34341,        // usee when the boss dies first time
-    SPELL_REBIRTH           = 34342,
-    SPELL_CLEAR_ALL_DEBUFFS = 0,        // used right before ember blast
-    SPELL_FLIGHT_MODE       = 31514,        // used right after ember blast
-    SPELL_SUMMON_PHOENIX_ADDS_PRENERF = 0, // pre 2.1
+    SPELL_FLAME_BUFFET = 34121,        // if nobody is in range
+    SPELL_FLAME_QUILLS = 0,
+    SPELL_EMBER_BLAST = 34341,        // usee when the boss dies first time
+    SPELL_REBIRTH = 34342,
+    SPELL_CLEAR_ALL_DEBUFFS = 34098,        // used right before ember blast
+    SPELL_FLIGHT_MODE = 31514,        // used right after ember blast
+    SPELL_SUMMON_PHOENIX_ADDS_PRENERF = 18814, // pre 2.1
     SPELL_SUMMON_PHOENIX_ADDS = 0,      // P1 spell - post 2.1
 
     // phase 2
-    SPELL_MELT_ARMOR        = 35410,
-    SPELL_DIVE_BOMB_VISUAL  = 35367,        // visual transform to fire ball
-    SPELL_DIVE_BOMB         = 35181,        // dive bomb damage spell
-    SPELL_BOMB_REBIRTH      = 35369,        // used after the dive bomb - to transform back to phoenis
-    SPELL_CHARGE            = 35412,        // charge a random target
-    SPELL_FLAME_RING        = 29218,        // summons flame patch npc
-    SPELL_BERSERK           = 26662,        // this spell is used only during phase II, increases Attack Speed by 150% & Damage by 500%
+    SPELL_MELT_ARMOR = 0,
+    SPELL_DIVE_BOMB_VISUAL = 35367,        // visual transform to fire ball
+    SPELL_DIVE_BOMB = 35181,        // dive bomb damage spell
+    SPELL_BOMB_REBIRTH = 35369,        // used after the dive bomb - to transform back to phoenis
+    SPELL_CHARGE = 35412,        // charge a random target
+    SPELL_FLAME_RING = 29218,        // summons flame patch npc
+    SPELL_BERSERK = 26662,        // this spell is used only during phase II, increases Attack Speed by 150% & Damage by 500%
 
     // NPC_EMBER_OF_ALAR       = 19551,        // scripted in Acid - summoned by spell 39110 / 41824
-    NPC_FLAME_PATCH         = 20602,        // summoned by spell 29218
-    SPELL_FLAME_PATCH       = 35380,
+    NPC_FLAME_PATCH = 20602,        // summoned by spell 29218
+    SPELL_FLAME_PATCH = 35380,
 
 #ifdef PRENERF_2_0_3
     MAX_PLATFORMS           = 6,
 #else
-    MAX_PLATFORMS           = 4,
+    MAX_PLATFORMS           = 2,
 #endif
 
     POINT_ID_RESSURRECT     = 0,            // center of the hall
@@ -90,8 +90,6 @@ static const EventLocation aPlatformLocation[MAX_PLATFORMS] =
 {
     {335.5587f, 58.56138f, 18.30103f},
     {387.8628f, 32.18992f, 20.23814f},
-    {388.777f, -32.10653f, 20.26319f},
-    {333.6099f,-60.69928f, 18.01521f},
 #ifdef PRENERF_2_0_3
     {264.36f, 40.78f, 20.21f},
     {268.38f,-49.80f, 20.38f}
