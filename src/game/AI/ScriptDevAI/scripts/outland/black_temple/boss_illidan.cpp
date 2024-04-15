@@ -106,8 +106,8 @@ enum
     SPELL_THROW_GLAIVE_VISUAL       = 39849,                // triggers 41466 - Throws the second glaive on the ground
     SPELL_GLAIVE_RETURNS            = 39873,                // Glaive flies back to Illidan
     SPELL_FIREBALL                  = 40598,                // 2.5k-3.5k damage in 10 yard radius. 2 second cast time.
-    SPELL_DARK_BARRAGE              = 40585,                // 10 second channeled spell, 3k shadow damage per second.
-    SPELL_EYE_BLAST_DUMMY           = 39908,                // This does the blue beam channel - targets 23070
+    SPELL_DARK_BARRAGE              = 0,                // 10 second channeled spell, 3k shadow damage per second.
+    SPELL_EYE_BLAST_DUMMY           = 0,                // This does the blue beam channel - targets 23070
 
     // Demon Form
     SPELL_DEMON_TRANSFORM_1         = 40511,                // start transform animation - spell sequence: 40398, 40506, 40510 - handled in core

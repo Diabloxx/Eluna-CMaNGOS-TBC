@@ -41,13 +41,13 @@ enum
     SAY_DEATH                   = -1564028,
 
     // Spells
-    SPELL_SINFUL_PERIODIC       = 40862,        // periodic triggers 40827
-    SPELL_SINISTER_PERIODIC     = 40863,        // periodic triggers 40859
-    SPELL_VILE_PERIODIC         = 40865,        // periodic triggers 40860
-    SPELL_WICKED_PERIODIC       = 40866,        // periodic triggers 40861
-    SPELL_RANDOM_PERIODIC       = 40867,
-    SPELL_FATAL_ATTRACTION      = 40869,        // dummy, triggers 41001
-    SPELL_SILENCING_SHRIEK      = 40823,
+    SPELL_SINFUL_PERIODIC       = 0,        // periodic triggers 40827
+    SPELL_SINISTER_PERIODIC     = 0,        // periodic triggers 40859
+    SPELL_VILE_PERIODIC         = 0,        // periodic triggers 40860
+    SPELL_WICKED_PERIODIC       = 0,        // periodic triggers 40861
+    SPELL_RANDOM_PERIODIC       = 0,
+    SPELL_FATAL_ATTRACTION      = 0,        // dummy, triggers 41001
+    SPELL_SILENCING_SHRIEK      = 0,
     SPELL_SABER_LASH_PROC       = 40816,        // procs 40810 and 43690 on melee damage
     SPELL_FRENZY                = 23537,
     SPELL_BERSERK               = 45078,
