@@ -31,8 +31,8 @@ enum
 
     // abilities
     SPELL_CLEAVE            = 31345,
-    SPELL_RAIN_OF_FIRE      = 31340,
-    SPELL_HOWL_OF_AZGALOR   = 31344,
+    SPELL_RAIN_OF_FIRE      = 0,
+    SPELL_HOWL_OF_AZGALOR   = 0,
     SPELL_DOOM              = 31347,
     SPELL_ENRAGE            = 26662,
 };

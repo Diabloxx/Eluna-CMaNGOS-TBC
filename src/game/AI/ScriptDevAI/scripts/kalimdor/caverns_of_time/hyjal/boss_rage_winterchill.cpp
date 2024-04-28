@@ -34,7 +34,7 @@ enum
     // abilities
     SPELL_ICEBOLT           = 31249, // TODO: figure out if DR should apply
     SPELL_FROST_NOVA        = 31250,
-    SPELL_DEATH_AND_DECAY   = 31258,
+    SPELL_DEATH_AND_DECAY   = 0,
     SPELL_FROST_ARMOR       = 31256,
     SPELL_ENRAGE            = 26662,
 };
