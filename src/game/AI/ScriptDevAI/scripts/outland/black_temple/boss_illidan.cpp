@@ -96,9 +96,9 @@ enum
     SPELL_SHEAR                     = 41032,                // Reduces Max. Health by 60% for 7 seconds. Can stack 19 times. 1.5 second cast
     SPELL_FLAME_CRASH               = 40832,                // Summons an invis/unselect passive mob that has an uiAura of flame in a circle around him.
     SPELL_DRAW_SOUL                 = 40904,                // 5k Shadow Damage in front of him. Heals Illidan for 100k health (script effect)
-    SPELL_PARASITIC_SHADOWFIEND_BOSS= 41917,                // DoT of 3k Shadow every 2 seconds. Lasts 10 seconds. (Script effect: Summon 2 parasites once the debuff has ticked off)
-    SPELL_SUMMON_PARASITICS         = 41915,                // Summons 2 Parasitic Shadowfiends on the target. Handled in core.
-    SPELL_AGONIZING_FLAMES          = 40834,                // triggers 40932
+    SPELL_PARASITIC_SHADOWFIEND_BOSS= 0,                // DoT of 3k Shadow every 2 seconds. Lasts 10 seconds. (Script effect: Summon 2 parasites once the debuff has ticked off)
+    SPELL_SUMMON_PARASITICS         = 0,                // Summons 2 Parasitic Shadowfiends on the target. Handled in core.
+    SPELL_AGONIZING_FLAMES          = 0,                // triggers 40932
     SPELL_FRENZY                    = 40683,                // Increases damage by 50% and attack speed by 30%. 20 seconds, PHASE 5 ONLY
 
     // Flying (Phase 2)
