@@ -62,47 +62,47 @@ enum
     SAY_ZERE_BERSERK            = -1564076,
 
     // High Nethermancer Zerevor's spells
-    SPELL_FLAMESTRIKE           = 41481,
-    SPELL_BLIZZARD              = 41482,
+    SPELL_FLAMESTRIKE           = 0,
+    SPELL_BLIZZARD              = 0,
     SPELL_ARCANE_BOLT           = 41483,
-    SPELL_ARCANE_EXPLOSION      = 41524,
-    SPELL_DAMPEN_MAGIC          = 41478,
+    SPELL_ARCANE_EXPLOSION      = 0,
+    SPELL_DAMPEN_MAGIC          = 0,
 
     // Lady Malande's spells
     SPELL_EMPOWERED_SMITE       = 41471,
-    SPELL_CIRCLE_OF_HEALING     = 41455,
-    SPELL_REFLECTIVE_SHIELD     = 41475,
-    SPELL_DIVINE_WRATH          = 41472,
+    SPELL_CIRCLE_OF_HEALING     = 0,
+    SPELL_REFLECTIVE_SHIELD     = 0,
+    SPELL_DIVINE_WRATH          = 0,
 
     // Gathios the Shatterer's spells
-    SPELL_BLESS_PROTECTION      = 41450,
-    SPELL_BLESS_SPELLWARD       = 41451,
-    SPELL_CONSECRATION          = 41541,
-    SPELL_HAMMER_OF_JUSTICE     = 41468,
+    SPELL_BLESS_PROTECTION      = 0,
+    SPELL_BLESS_SPELLWARD       = 0,
+    SPELL_CONSECRATION          = 0,
+    SPELL_HAMMER_OF_JUSTICE     = 0,
     SPELL_SEAL_OF_COMMAND       = 41469,
     SPELL_SEAL_OF_BLOOD         = 41459,
-    SPELL_CHROMATIC_AURA        = 41453,
-    SPELL_DEVOTION_AURA         = 41452,
+    SPELL_CHROMATIC_AURA        = 0,
+    SPELL_DEVOTION_AURA         = 0,
     SPELL_JUDGMENT              = 41467,                    // triggers 41473 (41470 or 41461)
 
     // Veras Darkshadow's spells
     SPELL_DEADLY_STRIKE         = 41480,                    // triggers 41485
     SPELL_DEADLY_POISON         = 41485,
     SPELL_ENVENOM               = 41487,
-    SPELL_VANISH_TELEPORT       = 41479,
-    SPELL_VANISH                = 41476,
+    SPELL_VANISH_TELEPORT       = 0,
+    SPELL_VANISH                = 0,
     // vanish effect spells
     SPELL_INSTANT_SPAWN         = 40031,
     SPELL_ENVENOM_DUMMY_1       = 41509,
     SPELL_ENVENOM_DUMMY_2       = 41510,
 
     SPELL_BERSERK               = 45078,
-    SPELL_BALANCE_OF_POWER      = 41341,                    // used to redirect damage to controller - unused atm
+    SPELL_BALANCE_OF_POWER      = 0,                    // used to redirect damage to controller - unused atm
     SPELL_SHARED_RULE_DAM       = 41342,
-    SPELL_SHARED_RULE_HEAL      = 41343,
+    SPELL_SHARED_RULE_HEAL      = 0,
     SPELL_EMPYREAL_EQUIVALENCY  = 41333,
-    SPELL_EMPYREAL_BALANCE      = 41499,                    // done on start of combat to equalize max hp
-    SPELL_QUIET_SUICIDE         = 3617,                     // when controller dies, all councilmembers commit suicide
+    SPELL_EMPYREAL_BALANCE      = 0,                    // done on start of combat to equalize max hp
+    SPELL_QUIET_SUICIDE         = 0,                     // when controller dies, all councilmembers commit suicide
 
     GENERIC_ACTION_BALANCE      = 100,
 };
