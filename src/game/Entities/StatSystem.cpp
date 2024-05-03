@@ -754,6 +754,7 @@ void Player::_RemoveAllStatBonuses()
 
 bool Creature::UpdateStats(Stats /*stat*/)
 {
+    UpdateAllStats();
     return true;
 }
 
