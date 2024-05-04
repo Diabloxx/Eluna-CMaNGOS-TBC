@@ -97,12 +97,12 @@ enum
     SPELL_ENVENOM_DUMMY_2       = 41510,
 
     SPELL_BERSERK               = 45078,
-    SPELL_BALANCE_OF_POWER      = 0,                    // used to redirect damage to controller - unused atm
+    SPELL_BALANCE_OF_POWER      = 41341,                    // used to redirect damage to controller - unused atm
     SPELL_SHARED_RULE_DAM       = 41342,
-    SPELL_SHARED_RULE_HEAL      = 0,
+    SPELL_SHARED_RULE_HEAL      = 41343,
     SPELL_EMPYREAL_EQUIVALENCY  = 41333,
-    SPELL_EMPYREAL_BALANCE      = 0,                    // done on start of combat to equalize max hp
-    SPELL_QUIET_SUICIDE         = 0,                     // when controller dies, all councilmembers commit suicide
+    SPELL_EMPYREAL_BALANCE      = 41499,                    // done on start of combat to equalize max hp
+    SPELL_QUIET_SUICIDE         = 3617,                     // when controller dies, all councilmembers commit suicide
 
     GENERIC_ACTION_BALANCE      = 100,
 };
@@ -720,6 +720,7 @@ struct BalanceOfPower : public AuraScript
 {
     void OnAbsorb(Aura* /*aura*/, int32& currentAbsorb, int32& remainingDamage, uint32& /*reflectedSpellId*/, int32& /*reflectDamage*/, bool& /*preventedDeath*/, bool& dropCharge, DamageEffectType /*damageType*/) const override
     {
+        return;
         // unused atm
         remainingDamage += currentAbsorb;
         currentAbsorb = 0;
