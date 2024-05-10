@@ -150,7 +150,7 @@ enum
     SPELL_MAIEV_DOWN                = 40409,                // cast when death prevention kicks in on maiev
 
     // Misc Summoned
-    SPELL_FLAME_CRASH_EFFECT        = 40836,                // Firey blue ring of circle that the other flame crash summons
+    SPELL_FLAME_CRASH_EFFECT        = 0,                // Firey blue ring of circle that the other flame crash summons
     SPELL_EYE_BLAST_TRIGGER         = 40017,                // This summons Demon Form every few seconds and deals ~20k damage in its radius
     // SPELL_DEMON_FIRE             = 40029,                // Blue fire trail left by Eye Blast. Deals 2k per second if players stand on it.
     SPELL_BLAZE_EFFECT              = 40610,                // Green flame on the ground, triggers damage (5k) every few seconds
@@ -213,7 +213,7 @@ enum
     EQUIP_ID_MAIN_HAND              = 32837,
     EQUIP_ID_OFF_HAND               = 32838,
 
-    MAX_ILLIDARI_ELITES             = 10,
+    MAX_ILLIDARI_ELITES             = 1,
     MAX_CAGE_SPELLS                 = 8,
     MAX_FLAME_AZZINOTH              = 2,
 
@@ -347,15 +347,15 @@ static const Locations aCenterLoc[] =
 static const Locations aIllidariElitesPos[MAX_ILLIDARI_ELITES] =
 {
     {743.9686f, 289.6447f, 311.1807f},
-    {753.8425f, 286.562f, 310.9353f},
-    {745.2552f, 322.1574f, 310.4596f},
-    {745.3237f, 283.986f, 309.2765f},
-    {750.0472f, 282.3274f, 309.4353f},
-    {747.0576f, 326.4268f, 309.0688f},
-    {751.0878f, 327.6505f, 309.4576f},
-    {748.8422f, 288.062f, 310.9782f},
-    {750.0322f, 323.6064f, 310.2757f},
-    {754.0332f, 325.8136f, 310.3195f},
+    //{753.8425f, 286.562f, 310.9353f},
+    //{745.2552f, 322.1574f, 310.4596f},
+    //{745.3237f, 283.986f, 309.2765f},
+    //{750.0472f, 282.3274f, 309.4353f},
+    //{747.0576f, 326.4268f, 309.0688f},
+    //{751.0878f, 327.6505f, 309.4576f},
+    //{748.8422f, 288.062f, 310.9782f},
+    //{750.0322f, 323.6064f, 310.2757f},
+    //{754.0332f, 325.8136f, 310.3195f},
 };
 
 static const Locations illidanFlightPos[] =
