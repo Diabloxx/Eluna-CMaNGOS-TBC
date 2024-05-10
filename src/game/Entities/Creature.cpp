@@ -548,8 +548,6 @@ bool Creature::UpdateEntry(uint32 Entry, const CreatureData* data /*=nullptr*/, 
                 SetPower(POWER_MANA, curmana);
             }
         }
-        else
-            SetHealthPercent(100.f);
     }
 
     uint32 faction = GetCreatureInfo()->Faction;
