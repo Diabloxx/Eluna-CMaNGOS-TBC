@@ -162,10 +162,10 @@ enum
     SPELL_AZZINOTH_CHANNEL          = 39857,                // Glaives cast it on Flames
 
     // Flame of Azzinoth
-    SPELL_FLAME_BLAST               = 40631,                // Flames of Azzinoth use this. Frontal cone AoE 7k-9k damage.
+    SPELL_FLAME_BLAST               = 0,                // Flames of Azzinoth use this. Frontal cone AoE 7k-9k damage.
     SPELL_CHARGE                    = 42003,                // Flames of Azzinoth charges whoever is too far from them. They enrage after this
     SPELL_UNCAGED_WRATH             = 39869,
-    SPELL_BLAZE                     = 40637,                // summons 23259
+    SPELL_BLAZE                     = 0,                // summons 23259
 
     // Parasitic Shadowfiend
     SPELL_PARASITIC_SHADOWFIEND_P   = 41913,
