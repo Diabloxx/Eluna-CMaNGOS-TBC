@@ -280,7 +280,7 @@ struct boss_kaelthasAI : public CombatAI
         AddCustomAction(KAEL_PHASE_TRANSITION_GROWTH, true, [&]() { HandlePhaseTransitionGrowth(); }, TIMER_COMBAT_COMBAT);
         AddCustomAction(KAEL_PHASE_TRANSITION_NETHER_BEAM, true, [&]() { HandlePhaseTransitionNetherBeam(); }, TIMER_COMBAT_COMBAT);
         AddCustomAction(KAEL_ACTION_GRAVITY_LAPSE_END, true, [&]() { HandleGravityLapseEnd(); }, TIMER_COMBAT_COMBAT);
-        AddCustomAction(KAEL_RESPAWN_ADVISORS, 1000u, [&]() { RespawnAdvisors(); }, TIMER_ALWAYS);
+        AddCustomAction(KAEL_RESPAWN_ADVISORS, 1000u, [&]() { RespawnAdvisors(); }, TIMER_COMBAT_OOC);
     }
 
     ScriptedInstance* m_instance;
