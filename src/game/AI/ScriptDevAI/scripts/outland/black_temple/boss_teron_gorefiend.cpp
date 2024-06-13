@@ -44,7 +44,7 @@ enum
     // Boss spells
     SPELL_INCINERATE            = 40239,
     SPELL_CRUSHING_SHADOWS      = 40243,
-    SPELL_SHADOW_OF_DEATH       = 40251,
+    SPELL_SHADOW_OF_DEATH       = 0,
     SPELL_BERSERK               = 45078,
     SPELL_SUMMON_DOOM_BLOSSOM   = 40188,
 
