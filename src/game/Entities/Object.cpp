@@ -1242,7 +1242,7 @@ bool WorldObject::HasStringId(uint32 stringId) const
 
 WorldObject::WorldObject() :
 #ifdef BUILD_ELUNA
-    elunaEvents(NULL),
+    elunaEvents(nullptr),
 #endif
     m_transport(nullptr), m_transportInfo(nullptr), m_isOnEventNotified(false),
     m_visibilityData(this), m_currMap(nullptr),
@@ -1255,7 +1255,7 @@ WorldObject::WorldObject() :
 WorldObject::~WorldObject()
 {
     delete elunaEvents;
-    elunaEvents = NULL;
+    elunaEvents = nullptr;
 }
 #endif
 
@@ -2083,6 +2083,16 @@ void WorldObject::RemoveFromWorld()
             for (uint32 stringId : m_stringIds)
                 m_currMap->RemoveStringIdObject(stringId, this);
     }
+
+#ifdef BUILD_ELUNA
+    // if multistate, delete elunaEvents and set to nullptr. events shouldn't move across states.
+    // in single state, the timed events should move across maps
+    if (!sElunaConfig->IsElunaCompatibilityMode())
+    {
+        delete elunaEvents;
+        elunaEvents = nullptr; // set to null in case map doesn't use eluna
+    }
+#endif
 
     Object::RemoveFromWorld();
 }

@@ -3380,8 +3380,17 @@ SpellCastResult Spell::cast(bool skipCheck)
     // set to real guid to be sent later to the client
     m_targets.updateTradeSlotItem();
 
-    m_duration = CalculateSpellDuration(m_spellInfo, m_caster, nullptr, m_auraScript);
+#ifdef BUILD_ELUNA
+    // used by eluna
+    if (m_caster)
+    {
+        if (m_caster->GetTypeId() == TYPEID_PLAYER)
+            if (Eluna* e = m_caster->GetEluna())
+                e->OnSpellCast(m_caster->ToPlayer(), this, skipCheck);
+    }
+#endif
 
+    m_duration = CalculateSpellDuration(m_spellInfo, m_caster, nullptr, m_auraScript);
     FillTargetMap();
 
     if (m_spellState == SPELL_STATE_FINISHED)               // stop cast if spell marked as finish somewhere in FillTargetMap
@@ -5722,9 +5731,68 @@ SpellCastResult Spell::CheckCast(bool strict)
 
                 lockId = item->GetProto()->LockID;
 
-                // if already unlocked
-                if (!lockId || item->HasFlag(ITEM_FIELD_FLAGS, ITEM_DYNFLAG_UNLOCKED))
-                    return SPELL_FAILED_ALREADY_OPEN;
+                // get the lock entry
+                uint32 lockId;
+                if (GameObject* go = m_targets.getGOTarget())
+                {
+                    // In BattleGround players can use only flags and banners
+                    if (((Player*)m_caster)->InBattleGround() &&
+                            !((Player*)m_caster)->CanUseBattleGroundObject())
+                        return SPELL_FAILED_TRY_AGAIN;
+
+                    lockId = go->GetGOInfo()->GetLockId();
+                    if (!lockId)
+                        return SPELL_FAILED_ALREADY_OPEN;
+
+                    // check if its in use only when cast is finished (called from spell::cast() with strict = false)
+                    if (!strict && go->IsInUse())
+                        return SPELL_FAILED_CHEST_IN_USE;
+
+                    if (!strict && go->HasFlag(GAMEOBJECT_FLAGS, GO_FLAG_IN_USE))
+                        return SPELL_FAILED_CHEST_IN_USE;
+
+                    // done in client but we need to recheck anyway
+                    if (go->GetGOInfo()->CannotBeUsedUnderImmunity() && m_caster->HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE))
+                        return SPELL_FAILED_DAMAGE_IMMUNE;
+                }
+                else if (Item* item = m_targets.getItemTarget())
+                {
+                    // not own (trade?)
+                    Player* itemOwner = item->GetOwner();
+                    Player* itemTrader = itemOwner->GetTrader();
+
+                    if (itemOwner != m_caster && itemTrader != m_caster)
+                        return SPELL_FAILED_ITEM_GONE;
+
+                    lockId = item->GetProto()->LockID;
+
+                    // if already unlocked
+                    if (!lockId || item->HasFlag(ITEM_FIELD_FLAGS, ITEM_DYNFLAG_UNLOCKED))
+                        return SPELL_FAILED_ALREADY_OPEN;
+                }
+                else
+                    return SPELL_FAILED_BAD_TARGETS;
+
+                // check lock compatibility
+                SpellEffectIndex effIdx = SpellEffectIndex(i);
+                SpellCastResult res = CanOpenLock(effIdx, lockId, m_effectSkillInfo[effIdx].skillId, m_effectSkillInfo[effIdx].reqSkillValue, m_effectSkillInfo[effIdx].skillValue);
+                if (res != SPELL_CAST_OK)
+                    return res;
+
+                // chance for fail at orange mining/herb/LockPicking gathering attempt
+                // second check prevent fail at rechecks
+                if (!strict && m_effectSkillInfo[effIdx].skillId != SKILL_NONE)
+                {
+                    bool canFailAtMax = m_effectSkillInfo[effIdx].skillId != SKILL_HERBALISM && m_effectSkillInfo[effIdx].skillId != SKILL_MINING;
+
+                    // chance for failure in orange gather / lockpick (gathering skill can't fail at maxskill)
+                    if ((canFailAtMax || m_effectSkillInfo[effIdx].skillValue < sWorld.GetConfigMaxSkillValue())
+                        && m_effectSkillInfo[effIdx].reqSkillValue > irand(m_effectSkillInfo[effIdx].skillValue - 25, m_effectSkillInfo[effIdx].skillValue + 37))
+                        return SPELL_FAILED_TRY_AGAIN;
+                }
+                if (m_CastItem)
+                    m_effectSkillInfo[effIdx].skillId = SKILL_NONE;
+                break;
             }
             else
                 return SPELL_FAILED_BAD_TARGETS;
